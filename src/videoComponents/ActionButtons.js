@@ -7,7 +7,7 @@ import VideoButton from './VideoButton/VideoButton';
 import AudioButton from './AudioButton/AudioButton';
 
 
-const ActionButtons = ({openCloseChat,smallFeedEl})=>{
+const ActionButtons = ({openCloseChat,smallFeedEl, largeFeedEl})=>{
     const callStatus = useSelector(state=>state.callStatus);
     // const callStatus = useSelector(state=>state.callStatus);
     const menuButtons = useRef(null)
@@ -46,7 +46,7 @@ const ActionButtons = ({openCloseChat,smallFeedEl})=>{
         <div id="menu-buttons" ref={menuButtons} className="row">
             {/* <i className="fa fa-microphone" style="font-size:48px;color:red"></i> */}
             <div className="left col-2">
-                <AudioButton />
+                <AudioButton smallFeedEl={smallFeedEl}/>
                 <VideoButton smallFeedEl={smallFeedEl}  />
             </div>
 
@@ -73,7 +73,10 @@ const ActionButtons = ({openCloseChat,smallFeedEl})=>{
             </div>  
 
             <div className="center justify-center text-end col-2">
-                <HangupButton/>
+            <HangupButton
+                    smallFeedEl={smallFeedEl}
+                    largeFeedEl={largeFeedEl}
+                />
             </div>
         </div> 
     )

@@ -11,7 +11,7 @@ const CallInfo = ({apptInfo})=>{
             // console.log("Updating time")
         },5000)
         return () => {
-            console.log("Clearing")
+            // console.log("Clearing")
           clearInterval(timeInterval);
         };
       }, []);
